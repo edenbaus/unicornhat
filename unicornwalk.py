@@ -15,9 +15,12 @@ x,y = uh.get_shape()
 #y,x = len(uh.PHAT), len(uh.PHAT[0])
 
 def set_boarder(r,g,b):
-	boarder = [(xi,yi,r,g,b) for xi in range(x) for yi in [0,y-1]] + [(xi,yi,100,100,100) for yi in range(y) for xi in [0,x-1]]
-	_ = [uh.set_pixel(boarder[i][0],boarder[i][1],boarder[i][2],boarder[i][3],boarder[i][4]) for i in range(len(boarder))]
-	uh.show()
+#	boarder = [(xi,yi,r,g,b) for xi in range(x) for yi in [0,y-1]] + [(xi,yi,100,100,100) for yi in range(y) for xi in [0,x-1]]
+	set_hline([0,3],100,100,100)
+	set_vline([0,7],100,100,100)
+
+#	[uh.set_pixel(boarder[i][0],boarder[i][1],boarder[i][2],boarder[i][3],boarder[i][4]) for i in range(len(boarder))]
+#	uh.show()
 	time.sleep(.5)
 
 def set_hline(col,r,g,b):
@@ -121,7 +124,7 @@ for i in range(nsteps):
 	uh.set_all(0,0,0)
 
 	RGB = color_chg(RGB[0],RGB[1],RGB[2])
-#	set_boarder(RGB[0],RGB[1],RGB[2])
+	set_boarder(RGB[0],RGB[1],RGB[2])
 
 	uh.set_pixel(x_pos,y_pos,RGB[0],RGB[1],RGB[2])
 #	uh.set_pixel(x2,y2,RGB[1],RGB[2],RGB[0])
