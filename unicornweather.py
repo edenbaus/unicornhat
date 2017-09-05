@@ -54,17 +54,14 @@ def set_temp(temp):
         
     if int(temp) <= 32:
         T = linshuffle(np.linspace(0,32,10),temp)
-        L = int(np.ceil(temp * 8/32))
         R,G,B = (0,0,100)
         set_hpline([0],T,R,G,B)
     elif int(temp) < 75:
         T = linshuffle(np.linspace(32,75,10),temp)
-        L = int(np.ceil(temp * 8 /75))
         R,G,B = (0,int(np.ceil(3*int(temp))),0)
         set_hpline([0],T,R,G,B)
     elif int(temp) >= 75:
         T = linshuffle(np.linspace(75,100,10),temp)
-        L = int(np.ceil(temp * 1/6) - 9)
         R,G,B = (2*int(temp),0,0)
         set_hpline([0],T,R,G,B)
     
