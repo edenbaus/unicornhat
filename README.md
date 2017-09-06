@@ -3,6 +3,7 @@
 ## The unicornhelper.py file contains a series of base functions for plotting lines, boarders, increasing/decreasing RGB values and a few others.
 ## The .ipynb notebook files are equivalent to their respective .py equivalent
 ## The unicornwalk.py file generates random walks on a grid based on the phat dimension. The moving light resets once it reaches a boundary pixel
+## [Unicornweather blog post](https://blog.nycdatascience.com/student-works/weather-glance-raspberry-pi/)
 ## The unicornweather.py file is a fun little program that scrapes the current weather conditions and displays
 - ##  Temperature degrees F
 - ##  Humidity %
