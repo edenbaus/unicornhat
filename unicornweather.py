@@ -27,8 +27,13 @@ def get_weather_df(zip_code):
     temp_df = pd.read_html(url)[0]
     temp_df = temp_df.iloc[:,1:]
     temp_df.columns = ['Time','Description','Temp','Feels','Precip','Humidity','Wind']
+    temp_df['Time'] = temp_df['Time'].map(lambda x: x.replace(" pm", " pm ")\
+                                                     .replace(" am", " am ")
+                                          if len(x) - len(x.replace(' ','')) == 1
+                                          else x)
     temp_df['Time'] = pd.to_datetime(temp_df['Time'])
     temp_df['Temp'] = temp_df['Temp'].map(lambda x: int(x[:-1]))
+
     temp_df['Feels'] = temp_df['Feels'].map(lambda x: int(x[:-1]))
     temp_df['Precip'] = temp_df['Precip'].map(lambda x: int(x[:-1]))
     temp_df['Humidity'] = temp_df['Humidity'].map(lambda x: int(x[:-1]))
